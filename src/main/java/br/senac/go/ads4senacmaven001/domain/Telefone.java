@@ -1,18 +1,24 @@
 package br.senac.go.ads4senacmaven001.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
 import lombok.Data;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Data
 @Entity
 @Table(name = "telefone")
 public class Telefone extends BaseModel {
+
+    @Column(length = 2, nullable = false)
     private String ddd;
+
+    @Column(length = 20, nullable = false)
     private String numero;
+
     private LocalDateTime dataInicio;
     private LocalDateTime dataFim;
-    //private Contato contato;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Contato contato;
 }

@@ -1,6 +1,5 @@
 package br.senac.go.ads4senacmaven001.resources;
 
-import br.senac.go.ads4senacmaven001.domain.Contato;
 import br.senac.go.ads4senacmaven001.domain.PessoaFisica;
 import br.senac.go.ads4senacmaven001.generics.GenericOperationsResource;
 
@@ -27,7 +26,7 @@ public class PessoaFisicaResource implements
      * @return
      */
     @Override
-    public List<PessoaFisica> get() {
+    public List<PessoaFisica> get(int i) {
         return null;
     }
 

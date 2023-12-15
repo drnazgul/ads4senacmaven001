@@ -62,16 +62,26 @@ public class PessoaService implements IService<Pessoa, Integer> {
 
     @Override
     public List<Pessoa> readAll() {
-
         log.info("Método PessoaService.read invocado");
 
-        List<Pessoa> pessoa = this.pessoaRepository
-                .findAll();
+        List<Pessoa> pessoas = this.pessoaRepository.findPessoasByNomeLikeIgnoreCase("");
+        log.debug("Valores recuperados em PessoaService.read são {}", pessoas);
 
-        log.debug("Valores recuperados em PessoaService.read são {}", pessoa);
-
-        return pessoa;
+        return pessoas;
     }
+//
+//    @Override
+//    public List<Pessoa> readAll() {
+//
+//        log.info("Método PessoaService.read invocado");
+//
+//        List<Pessoa> pessoa = this.pessoaRepository
+//                .findAll();
+//
+//        log.debug("Valores recuperados em PessoaService.read são {}", pessoa);
+//
+//        return pessoa;
+//    }
 
     @Override
     @Transactional
@@ -101,7 +111,7 @@ public class PessoaService implements IService<Pessoa, Integer> {
         this.pessoaRepository.save(entity);
         */
 
-        /**
+        /* *
          *  Exemplo 3, para evitar a situação do exemplo 2, precisamos seguir os seguintes passos:
          *  1. Fazer uma pesquisa para verificar se o ID existe
          *  2. Se existir, fazer a atualização.

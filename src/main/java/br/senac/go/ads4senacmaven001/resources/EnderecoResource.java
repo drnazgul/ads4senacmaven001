@@ -13,7 +13,7 @@ public class EnderecoResource implements GenericOperationsResource<Endereco, Int
     }
 
     @Override
-    public List<Endereco> get() {
+    public List<Endereco> get(int i) {
         return null;
     }
 

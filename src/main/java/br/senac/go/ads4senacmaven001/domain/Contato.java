@@ -25,6 +25,7 @@ public class Contato extends BaseModel {
      */
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Email> emails;
+
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Endereco> enderecos;
 

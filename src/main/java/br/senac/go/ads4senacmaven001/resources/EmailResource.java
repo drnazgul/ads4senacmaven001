@@ -1,7 +1,6 @@
 package br.senac.go.ads4senacmaven001.resources;
 
 import br.senac.go.ads4senacmaven001.domain.Email;
-import br.senac.go.ads4senacmaven001.domain.Endereco;
 import br.senac.go.ads4senacmaven001.generics.GenericOperationsResource;
 
 import java.util.List;
@@ -26,7 +25,7 @@ public class EmailResource implements GenericOperationsResource<Email, Integer> 
      * @return
      */
     @Override
-    public List<Email> get() {
+    public List<Email> get(int i) {
         return null;
     }
 

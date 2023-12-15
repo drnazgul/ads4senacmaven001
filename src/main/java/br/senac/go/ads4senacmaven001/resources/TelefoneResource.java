@@ -25,7 +25,7 @@ public class TelefoneResource implements GenericOperationsResource<Telefone, Int
      * @return
      */
     @Override
-    public List<Telefone> get() {
+    public List<Telefone> get(int i) {
         return null;
     }
 

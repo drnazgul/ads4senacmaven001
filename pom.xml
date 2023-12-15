@@ -13,12 +13,6 @@
 
     <artifactId>ads4-senac-maven-001</artifactId>
 
-
-
-
-
-
-
     <version>0.0.1</version>
     <packaging>jar</packaging>
 
@@ -109,12 +103,6 @@
             <version>${swagger.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.springfox/springfox-spring-web -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-spring-web</artifactId>
-            <version>${swagger.version}</version>
-        </dependency>
 
         <!-- SLF4J API -->
         <dependency>

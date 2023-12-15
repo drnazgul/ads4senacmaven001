@@ -25,7 +25,7 @@ public class PessoaJuridicaResource implements GenericOperationsResource<PessoaJ
      * @return
      */
     @Override
-    public List<PessoaJuridica> get() {
+    public List<PessoaJuridica> get(int i) {
         return null;
     }
 

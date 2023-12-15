@@ -15,21 +15,21 @@ import java.util.List;
  */
 public interface IService<E,N> {
 
-    public E create(E entity);
+    E create(E entity);
 
-    public E readById(N id) throws Exception;
+    E readById(N id) throws Exception;
 
-    public E read(E entity) throws Exception;
+    E read(E entity) throws Exception;
 
-    public List<Pessoa> readAll();
+    List<Pessoa> readAll();
 
-    public E updatePatch(E entity, N id) throws Exception;
+    E updatePatch(E entity, N id) throws Exception;
 
-    public E updatePut(E entity, N id);
+    E updatePut(E entity, N id);
 
-    public E deleteById(N id);
+    E deleteById(N id);
 
-    public E delete(E entity);
+    E delete(E entity);
 
 
 

@@ -1,7 +1,6 @@
 package br.senac.go.ads4senacmaven001.resources;
 
 import br.senac.go.ads4senacmaven001.domain.Contato;
-import br.senac.go.ads4senacmaven001.domain.Endereco;
 import br.senac.go.ads4senacmaven001.generics.GenericOperationsResource;
 
 import java.util.List;
@@ -26,7 +25,7 @@ public class ContatoResource implements GenericOperationsResource<Contato, Integ
      * @return
      */
     @Override
-    public List<Contato> get() {
+    public List<Contato> get(int i) {
         return null;
     }
 
