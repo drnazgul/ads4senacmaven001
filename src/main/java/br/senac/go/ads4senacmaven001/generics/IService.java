@@ -1,6 +1,6 @@
 package br.senac.go.ads4senacmaven001.generics;
 
-import br.senac.go.ads4senacmaven001.domain.Pessoa;
+import br.senac.go.ads4senacmaven001.domain.Email;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public interface IService<E,N> {
 
     E read(E entity) throws Exception;
 
-    List<Pessoa> readAll();
+    List<E> readAll();
 
     E updatePatch(E entity, N id) throws Exception;
 

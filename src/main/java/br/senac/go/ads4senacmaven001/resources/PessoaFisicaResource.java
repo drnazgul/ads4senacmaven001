@@ -5,8 +5,7 @@ import br.senac.go.ads4senacmaven001.generics.GenericOperationsResource;
 
 import java.util.List;
 
-public class PessoaFisicaResource implements
-        GenericOperationsResource<PessoaFisica, Integer> {
+public class PessoaFisicaResource implements GenericOperationsResource<PessoaFisica, Integer> {
     /**
      * Quando a pessoa for mandar um post, a aplicação
      * recebe uma entidade(E) e retorna a entidade (e) com o campo

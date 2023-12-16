@@ -1,5 +1,6 @@
 package br.senac.go.ads4senacmaven001.services;
 
+import br.senac.go.ads4senacmaven001.domain.Email;
 import br.senac.go.ads4senacmaven001.domain.Pessoa;
 import br.senac.go.ads4senacmaven001.generics.IService;
 import br.senac.go.ads4senacmaven001.repositories.PessoaRepository;
@@ -60,28 +61,28 @@ public class PessoaService implements IService<Pessoa, Integer> {
         return pessoa;
     }
 
+//    @Override
+//    public List<Pessoa> readAll() {
+//        log.info("Método PessoaService.read invocado");
+//
+//        List<Pessoa> pessoas = this.pessoaRepository.findPessoasByNomeLikeIgnoreCase("");
+//        log.debug("Valores recuperados em PessoaService.read são {}", pessoas);
+//
+//        return pessoas;
+//    }
+////
     @Override
     public List<Pessoa> readAll() {
+
         log.info("Método PessoaService.read invocado");
 
-        List<Pessoa> pessoas = this.pessoaRepository.findPessoasByNomeLikeIgnoreCase("");
+        List<Pessoa> pessoas = this.pessoaRepository
+                .findAll();
+
         log.debug("Valores recuperados em PessoaService.read são {}", pessoas);
 
         return pessoas;
     }
-//
-//    @Override
-//    public List<Pessoa> readAll() {
-//
-//        log.info("Método PessoaService.read invocado");
-//
-//        List<Pessoa> pessoa = this.pessoaRepository
-//                .findAll();
-//
-//        log.debug("Valores recuperados em PessoaService.read são {}", pessoa);
-//
-//        return pessoa;
-//    }
 
     @Override
     @Transactional
@@ -142,7 +143,7 @@ public class PessoaService implements IService<Pessoa, Integer> {
         log.info("Método PessoaService.updatePatch invocado");
         log.debug("Valores informados PessoaService.updatePatch {} {}", entity, id);
 
-        log.debug("Valores recuperados em PessoaService.read são {}", entity);
+        log.debug("Valores recuperados em PessoaService.updatePatch são {}", entity);
 
         return null;
     }

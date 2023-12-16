@@ -4,7 +4,10 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -23,12 +26,12 @@ public class Contato extends BaseModel {
     /**
      * A configuração @OneToMany por padrão o fetch é sempre LAZY
      */
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Email> emails;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Email> emails = new HashSet<>();
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Endereco> enderecos;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Endereco> enderecos = new HashSet<>();
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Telefone> telefones;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Telefone> telefones = new HashSet<>();
 }

@@ -19,6 +19,6 @@ public class Telefone extends BaseModel {
     private LocalDateTime dataInicio;
     private LocalDateTime dataFim;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private Contato contato;
 }

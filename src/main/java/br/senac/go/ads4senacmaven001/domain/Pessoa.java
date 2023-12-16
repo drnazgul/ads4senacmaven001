@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 @Data
 @Entity
@@ -23,5 +24,5 @@ public class Pessoa extends BaseModel {
     private LocalDateTime dataFim;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Contato> contatos;
+    private List<Contato> contatos = new ArrayList<>();
 }
