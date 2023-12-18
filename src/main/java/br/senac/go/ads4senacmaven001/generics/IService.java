@@ -21,7 +21,7 @@ public interface IService<E,N> {
 
     E read(E entity) throws Exception;
 
-    List<E> readAll();
+    List<E> readAll() throws Exception;
 
     E updatePatch(E entity, N id) throws Exception;
 

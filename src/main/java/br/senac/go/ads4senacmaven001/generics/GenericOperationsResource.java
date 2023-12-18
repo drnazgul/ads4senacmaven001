@@ -24,7 +24,7 @@ public interface GenericOperationsResource<E,N> {
      * Retorna uma lista de entidades
      * @return
      */
-    List<E> get(int i);
+    List<E> get(int i) throws Exception;
 
 
     /**

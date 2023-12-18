@@ -16,6 +16,6 @@ public class Email extends BaseModel{
     private LocalDateTime dataInicio;
     private LocalDateTime dataFim;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Contato contato;
 }

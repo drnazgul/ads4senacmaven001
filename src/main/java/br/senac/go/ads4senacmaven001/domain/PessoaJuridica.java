@@ -12,8 +12,6 @@ public class PessoaJuridica extends BaseModel {
     @Column(length = 14, nullable = false)
     private String cnpj;
 
-    @OneToOne(
-            cascade = CascadeType.ALL,
-            orphanRemoval = true)
+    @OneToOne(fetch = FetchType.LAZY)
     private Pessoa pessoa;
 }

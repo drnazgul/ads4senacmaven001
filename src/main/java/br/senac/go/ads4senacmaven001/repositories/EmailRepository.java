@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface EmailRepository extends JpaRepository<Email, Integer> {
 
-    List<Email> findEmailByEnderecoEmailLikeIgnoreCase(String enderecoEmail);
+    List<Email> searchById(Integer id);
 }

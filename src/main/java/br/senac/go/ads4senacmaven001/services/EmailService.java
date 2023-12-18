@@ -59,7 +59,7 @@ public class EmailService implements IService<Email, Integer> {
     }
 
     @Override
-    public List<Email> readAll() {
+    public List<Email> readAll() throws Exception {
 
         log.info("Método EmailService.read invocado");
 

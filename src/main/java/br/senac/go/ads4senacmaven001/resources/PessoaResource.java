@@ -43,12 +43,12 @@ public class PessoaResource implements GenericOperationsResource<Pessoa, Integer
             consumes = {MediaType.APPLICATION_JSON_VALUE, "application/xml;charset=UTF-8"},
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public Pessoa post(@RequestBody @Validated Pessoa entity) {
-        LOGGER.log(Level.INFO,"PessoaResource.post inicado {} ", entity);
+        LOGGER.log(Level.INFO,"PessoaResource.post iniciado {} ", entity);
 
-        Pessoa pessoaPersitida = this.pessoaService.create(entity);
-        LOGGER.log(Level.INFO,"PessoaResource.post concluído {} ", pessoaPersitida);
+        Pessoa pessoaPersistida = this.pessoaService.create(entity);
+        LOGGER.log(Level.INFO,"PessoaResource.post concluído {} ", pessoaPersistida);
 
-        return pessoaPersitida;
+        return pessoaPersistida;
     }
 
     @Override

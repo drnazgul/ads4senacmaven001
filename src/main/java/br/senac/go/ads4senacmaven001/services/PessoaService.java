@@ -1,5 +1,6 @@
 package br.senac.go.ads4senacmaven001.services;
 
+import br.senac.go.ads4senacmaven001.domain.Contato;
 import br.senac.go.ads4senacmaven001.domain.Email;
 import br.senac.go.ads4senacmaven001.domain.Pessoa;
 import br.senac.go.ads4senacmaven001.generics.IService;
@@ -25,11 +26,18 @@ public class PessoaService implements IService<Pessoa, Integer> {
     @Override
     @Transactional
     public Pessoa create(Pessoa entity) {
-
         log.info("Método PessoaService.create invocado");
         log.debug("Valores informados PessoaService.create {}", entity);
 
-        return this.pessoaRepository.save(entity);
+        for (Contato contato : entity.getContatos()) {
+            // Configurar o relacionamento bidirecional
+            contato.setPessoa(entity);
+        }
+
+        Pessoa pessoaPersistida = this.pessoaRepository.save(entity);
+
+        log.debug("Valores recuperados em PessoaService.create são {}", pessoaPersistida);
+        return pessoaPersistida;
     }
 
     @Override

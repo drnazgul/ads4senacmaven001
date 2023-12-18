@@ -30,15 +30,6 @@ public class EmailResource implements GenericOperationsResource<Email, Integer> 
     private static final Logger LOGGER =
             Logger.getLogger(EmailResource.class.getName());
 
-
-    /**
-     * Quando a pessoa for mandar um post, a aplicação
-     * recebe uma entidade(E) e retorna a entidade (e) com o campo
-     * id preenchido
-     *
-     * @param entity
-     * @return
-     */
     @Override
     @ApiOperation(
             value="${resource.email-post}",
@@ -81,7 +72,7 @@ public class EmailResource implements GenericOperationsResource<Email, Integer> 
     })
     @GetMapping(value = "/{id}",
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-    public List<Email> get(@PathVariable("id") int id) {
+    public List<Email> get(@PathVariable("id") int id) throws Exception {
         LOGGER.log(Level.INFO,"EmailResource.get iniciado", id);
 
         List<Email> emailList = this.emailService.readAll();
