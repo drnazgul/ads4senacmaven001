@@ -1,5 +1,6 @@
 package br.senac.go.ads4senacmaven001.domain;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -14,6 +15,7 @@ import java.util.List;
 @Table(name = "pessoa")
 public class Pessoa extends BaseModel {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL) // Exemplo do uso do JsonInclude
     @Column(length = 50, nullable = false)
     private String nome;
 

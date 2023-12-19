@@ -1,6 +1,6 @@
 package br.senac.go.ads4senacmaven001.resources;
 
-import br.senac.go.ads4senacmaven001.domain.Pessoa;
+import br.senac.go.ads4senacmaven001.domain.*;
 import br.senac.go.ads4senacmaven001.generics.GenericOperationsResource;
 import br.senac.go.ads4senacmaven001.services.PessoaService;
 import io.swagger.annotations.Api;
@@ -26,7 +26,6 @@ public class PessoaResource implements GenericOperationsResource<Pessoa, Integer
 
     private static final Logger LOGGER =
             Logger.getLogger(PessoaResource.class.getName());
-
     @Override
     @ApiOperation(
             value="${resource.pessoa-post}",
@@ -44,6 +43,19 @@ public class PessoaResource implements GenericOperationsResource<Pessoa, Integer
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public Pessoa post(@RequestBody @Validated Pessoa entity) {
         LOGGER.log(Level.INFO,"PessoaResource.post iniciado {} ", entity);
+
+        // Criar contatos, emails, endereços e telefones
+        for (Contato contato : entity.getContatos()) {
+            for (Email email : contato.getEnderecoEmail()) {
+                email.setContato(contato);
+            }
+            for (Endereco endereco : contato.getLogradouro()) {
+                endereco.setContato(contato);
+            }
+            for (Telefone telefone : contato.getNumero()) {
+                telefone.setContato(contato);
+            }
+        }
 
         Pessoa pessoaPersistida = this.pessoaService.create(entity);
         LOGGER.log(Level.INFO,"PessoaResource.post concluído {} ", pessoaPersistida);
